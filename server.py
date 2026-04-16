@@ -96,6 +96,7 @@ def run_wp_cli_raw(args: List[str], path: Optional[str] = None, ssh: Optional[st
 
 @mcp.tool()
 async def rest_discover(
+    _track("rest_discover")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None
@@ -110,6 +111,7 @@ async def rest_discover(
 
 @mcp.tool()
 async def rest_list(
+    _track("rest_list")
     resource: str,
     path: Optional[str] = None,
     ssh: Optional[str] = None,
@@ -138,6 +140,7 @@ async def rest_list(
 
 @mcp.tool()
 async def rest_get(
+    _track("rest_get")
     resource: str,
     resource_id: str,
     path: Optional[str] = None,
@@ -158,6 +161,7 @@ async def rest_get(
 
 @mcp.tool()
 async def rest_create(
+    _track("rest_create")
     resource: str,
     path: Optional[str] = None,
     ssh: Optional[str] = None,
@@ -207,6 +211,7 @@ async def rest_create(
 
 @mcp.tool()
 async def rest_update(
+    _track("rest_update")
     resource: str,
     resource_id: str,
     path: Optional[str] = None,
@@ -249,6 +254,7 @@ async def rest_update(
 
 @mcp.tool()
 async def rest_delete(
+    _track("rest_delete")
     resource: str,
     resource_id: str,
     path: Optional[str] = None,
@@ -269,6 +275,7 @@ async def rest_delete(
 
 @mcp.tool()
 async def rest_post_list(
+    _track("rest_post_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -295,6 +302,7 @@ async def rest_post_list(
 
 @mcp.tool()
 async def rest_page_list(
+    _track("rest_page_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -321,6 +329,7 @@ async def rest_page_list(
 
 @mcp.tool()
 async def rest_user_list(
+    _track("rest_user_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -347,6 +356,7 @@ async def rest_user_list(
 
 @mcp.tool()
 async def rest_comment_list(
+    _track("rest_comment_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -373,6 +383,7 @@ async def rest_comment_list(
 
 @mcp.tool()
 async def rest_category_list(
+    _track("rest_category_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -396,6 +407,7 @@ async def rest_category_list(
 
 @mcp.tool()
 async def rest_tag_list(
+    _track("rest_tag_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -419,6 +431,7 @@ async def rest_tag_list(
 
 @mcp.tool()
 async def rest_media_list(
+    _track("rest_media_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None,
@@ -445,6 +458,7 @@ async def rest_media_list(
 
 @mcp.tool()
 async def wp_cli_info(
+    _track("wp_cli_info")
     path: Optional[str] = None
 ) -> dict:
     """
@@ -456,6 +470,7 @@ async def wp_cli_info(
 
 @mcp.tool()
 async def wp_site_info(
+    _track("wp_site_info")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     http_target: Optional[str] = None
@@ -494,6 +509,7 @@ async def wp_site_info(
 
 @mcp.tool()
 async def wp_plugin_list(
+    _track("wp_plugin_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     status: Optional[str] = None
@@ -510,6 +526,7 @@ async def wp_plugin_list(
 
 @mcp.tool()
 async def wp_theme_list(
+    _track("wp_theme_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     status: Optional[str] = None
@@ -526,6 +543,7 @@ async def wp_theme_list(
 
 @mcp.tool()
 async def wp_db_query(
+    _track("wp_db_query")
     sql: str,
     path: Optional[str] = None,
     ssh: Optional[str] = None
@@ -566,6 +584,7 @@ async def wp_db_query(
 
 @mcp.tool()
 async def wp_search_replace(
+    _track("wp_search_replace")
     search: str,
     replace: str,
     path: Optional[str] = None,
@@ -590,6 +609,7 @@ async def wp_search_replace(
 
 @mcp.tool()
 async def wp_cache_flush(
+    _track("wp_cache_flush")
     path: Optional[str] = None,
     ssh: Optional[str] = None
 ) -> dict:
@@ -601,6 +621,7 @@ async def wp_cache_flush(
 
 @mcp.tool()
 async def wp_cron_event_list(
+    _track("wp_cron_event_list")
     path: Optional[str] = None,
     ssh: Optional[str] = None
 ) -> dict:
@@ -612,6 +633,7 @@ async def wp_cron_event_list(
 
 @mcp.tool()
 async def wp_cron_run(
+    _track("wp_cron_run")
     hook: Optional[str] = None,
     path: Optional[str] = None,
     ssh: Optional[str] = None
@@ -629,6 +651,7 @@ async def wp_cron_run(
 
 @mcp.tool()
 async def wp_rewrite_flush(
+    _track("wp_rewrite_flush")
     path: Optional[str] = None,
     ssh: Optional[str] = None,
     hard: bool = False
@@ -644,6 +667,7 @@ async def wp_rewrite_flush(
 
 @mcp.tool()
 async def wp_option_get(
+    _track("wp_option_get")
     option_name: str,
     path: Optional[str] = None,
     ssh: Optional[str] = None
@@ -657,6 +681,7 @@ async def wp_option_get(
 
 @mcp.tool()
 async def wp_option_update(
+    _track("wp_option_update")
     option_name: str,
     option_value: str,
     path: Optional[str] = None,
@@ -672,6 +697,7 @@ async def wp_option_update(
 
 @mcp.tool()
 async def wp_core_check_update(
+    _track("wp_core_check_update")
     path: Optional[str] = None,
     ssh: Optional[str] = None
 ) -> dict:
@@ -683,6 +709,7 @@ async def wp_core_check_update(
 
 @mcp.tool()
 async def wp_plugin_check_update(
+    _track("wp_plugin_check_update")
     path: Optional[str] = None,
     ssh: Optional[str] = None
 ) -> dict:
@@ -698,6 +725,7 @@ async def wp_cli_check_available() -> dict:
     Check if WP-CLI is installed and available on this server.
     Returns version information if available.
     """
+    _track("wp_cli_check_available")
     available = wp_cli_available()
     if not available:
         return {
